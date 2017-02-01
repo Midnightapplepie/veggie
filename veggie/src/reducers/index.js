@@ -8,7 +8,7 @@ const search_item_reducer = (state = {}, action)=>{
 		console.log("search item reducder");
 		return state
 	}
-	return {}
+	return state;
 }
 
 const update_input_value = (state = {search_input: ""}, action)=>{
@@ -16,7 +16,7 @@ const update_input_value = (state = {search_input: ""}, action)=>{
 		let newState = {...state, search_input: action.text};
 		return newState;
 	}
-	return {}
+	return state;
 }
 
 const allReducers = combineReducers({

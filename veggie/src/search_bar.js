@@ -3,6 +3,13 @@ import {search_item,updateInputValue} from './actions';
 import {connect} from 'react-redux';
 
 class SearchBar extends Component {
+	constructor(props) {
+		super(props);
+		// console.log(state);
+		this.state = {
+			search_input: props.search_input
+		}
+	}
 
 	render(){
 		return (
@@ -28,6 +35,7 @@ class SearchBar extends Component {
 }
 
 const mapStateToProps = (state)=>{
+	console.log(this.props);
 	return {
 		search_input: state.search_input
 	}
@@ -36,6 +44,7 @@ const mapStateToProps = (state)=>{
 const mapDispatchToProps = (dispatch)=>{
 	return {
 		onSearchClick: ()=>{
+			console.log(this.props.search_input);
 			dispatch(search_item())
 		},
 		onInputChange: (e)=>{
