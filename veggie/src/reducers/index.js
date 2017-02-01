@@ -11,10 +11,10 @@ const search_item_reducer = (state = {}, action)=>{
 	return {}
 }
 
-const update_input_value = (state = {}, action)=>{
+const update_input_value = (state = {search_input: ""}, action)=>{
 	if(action.type === UPDATE_INPUT_VALUE){
-		console.log("update_input_value");
-		return state
+		let newState = {...state, search_input: action.text};
+		return newState;
 	}
 	return {}
 }

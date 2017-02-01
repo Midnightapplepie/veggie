@@ -29,7 +29,7 @@ class SearchBar extends Component {
 
 const mapStateToProps = (state)=>{
 	return {
-		searchInputValue: state.searchInputValue
+		search_input: state.search_input
 	}
 }
 
@@ -38,8 +38,8 @@ const mapDispatchToProps = (dispatch)=>{
 		onSearchClick: ()=>{
 			dispatch(search_item())
 		},
-		onInputChange: ()=>{
-			dispatch(updateInputValue())
+		onInputChange: (e)=>{
+			dispatch(updateInputValue(e.target.value))
 		}
 	}
 }
